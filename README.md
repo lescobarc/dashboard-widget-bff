@@ -14,15 +14,18 @@ Este proyecto implementa un Backend-for-Frontend (BFF) en Node.js/Express que ex
 - Node.js >= 18.x (recomendado 18.x o 20.x para Angular 20)
 - Angular CLI >= 20.x
 - npm >= 9.x
+- git
 
 ---
 
 ## Tabla de Contenidos
+
 - [Arquitectura Visual](#arquitectura-visual)
 - [Estructura de Carpetas](#estructura-de-carpetas)
 - [Instalación y Ejecución](#instalación-y-ejecución)
-  - [Backend (BFF)](#backend-bff)
-  - [Frontend (Angular)](#frontend-angular)
+  - [Clonar el repositorio](#1-clonar-el-repositorio)
+  - [Backend (BFF)](#2-backend-bff)
+  - [Frontend (Angular)](#3-frontend-angular)
 - [Comandos útiles](#comandos-útiles)
 - [Uso del Endpoint](#uso-del-endpoint)
 - [Pruebas](#pruebas)
@@ -85,38 +88,46 @@ prueba-tecnica/
 
 ## Instalación y Ejecución
 
-### Backend (BFF)
+### 1. Clonar el repositorio
+Clona este repositorio en tu máquina local:
+```sh
+git clone https://github.com/lescobarc/dashboard-widget-bff.git
+cd dashboard-widget-bff
+```
+
+### 2. Backend (BFF)
 1. Ve a la carpeta `backend`:
-   ```sh
-   cd backend
-   ```
+  ```sh
+  cd backend
+  ```
 2. Instala dependencias:
-   ```sh
-   npm install
-   ```
-3. Consigue una API key gratuita de [OpenWeatherMap](https://openweathermap.org/api) y configúrala en el archivo `.env`:
-   ```env
-   OPENWEATHER_API_KEY=tu_api_key_aqui
-   ```
+  ```sh
+  npm install
+  ```
+3. Consigue una API key gratuita de OpenWeatherMap (la puedes obtener en https://openweathermap.org/api).
+4. Crea un archivo llamado `.env` en la carpeta `backend` y agrega la siguiente línea con tu API key:
+  ```env
+  OPENWEATHER_API_KEY=tu_api_key_aqui
+  ```
 4. Inicia el servidor:
-   ```sh
-   npm start # o node src/server.js
-   ```
+  ```sh
+  npm start # o node src/server.js
+  ```
 5. El backend quedará escuchando en `http://localhost:3000`
 
-### Frontend (Angular)
+### 3. Frontend (Angular)
 1. Ve a la carpeta del frontend:
-   ```sh
-   cd dashboard-widget
-   ```
+  ```sh
+  cd dashboard-widget
+  ```
 2. Instala dependencias:
-   ```sh
-   npm install
-   ```
+  ```sh
+  npm install
+  ```
 3. Inicia la aplicación:
-   ```sh
-   ng serve --port 4200
-   ```
+  ```sh
+  ng serve --port 4200
+  ```
 4. Accede a `http://localhost:4200` en tu navegador.
 
 ---
@@ -134,7 +145,7 @@ prueba-tecnica/
 ## Uso del Endpoint
 
 
-**GET** `/api/dashboard-widget?city=Ciudad`
+**GET** `/api/dashboard-widget?city=ciudad`
 
 **Ejemplo de respuesta:**
 
@@ -185,6 +196,8 @@ Content-Type: application/json; charset=utf-8
 - Si ves un error relacionado con `Cannot use import statement outside a module`, ejecuta Jest con el siguiente flag:
   ```sh
   node --experimental-vm-modules node_modules/jest/bin/jest.js tests/controllers/dashboardWidget.controller.test.js
+  node --experimental-vm-modules node_modules/jest/bin/jest.js tests/services/bitcoin.service.test.js
+  node --experimental-vm-modules node_modules/jest/bin/jest.js tests/services/weather.service.test.js
   ```
 - Las pruebas cubren controladores y servicios, incluyendo manejo de errores y mocks de APIs externas.
 
