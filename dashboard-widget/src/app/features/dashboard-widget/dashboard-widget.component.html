@@ -1,0 +1,17 @@
+<section class="dashboard-widget__container" tabindex="0" aria-label="Widget de clima y Bitcoin">
+  <div *ngIf="loading" class="dashboard-widget__loading" role="status" aria-live="polite">Cargando...</div>
+  <div *ngIf="error" class="dashboard-widget__error" role="alert">{{ error }}</div>
+  <div *ngIf="data" class="dashboard-widget__content">
+    <h2 class="dashboard-widget__city" aria-label="Ciudad">{{ data.city }}</h2>
+    <div class="dashboard-widget__weather-row" aria-label="Clima actual">
+      <img class="dashboard-widget__weather-icon" [src]="'https://openweathermap.org/img/wn/' + data.weather.icon + '@2x.png'" [alt]="'Icono del clima: ' + (data.weather.description | titlecase)" loading="lazy">
+      <span class="dashboard-widget__weather-desc">{{ data.weather.description | titlecase }}: <b>{{ data.weather.temperature }}°C</b></span>
+    </div>
+    <div class="dashboard-widget__bitcoin-row" aria-label="Precio de Bitcoin">
+      <img class="dashboard-widget__btc-icon" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png" alt="Logo Bitcoin" width="32" height="32" loading="lazy" onerror="this.style.display='none'">
+      <span class="dashboard-widget__btc-label">BTC/USD:</span>
+      <span class="dashboard-widget__btc-value">${{ data.bitcoin.usd }}</span>
+    </div>
+  </div>
+</section>
+

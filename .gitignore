@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log*
+.env
+
+# Angular
+dashboard-widget/node_modules/
+dashboard-widget/dist/
+dashboard-widget/.angular/
+dashboard-widget/.env
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Sistema
+.DS_Store
+Thumbs.db
