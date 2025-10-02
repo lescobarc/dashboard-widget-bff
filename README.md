@@ -1,6 +1,6 @@
 
 
-# Widget: BFF + Frontend Angular
+# Dashboard Widget: BFF + Frontend Angular
 
 ---
 
@@ -133,21 +133,40 @@ prueba-tecnica/
 
 ## Uso del Endpoint
 
-- **GET** `/api/dashboard-widget?city=Ciudad`
-- **Respuesta:**
-  ```json
-  {
-    "city": "NombreCiudad",
-    "weather": {
-      "description": "cielo claro",
-      "temperature": 25.3,
-      "icon": "01d"
-    },
-    "bitcoin": {
-      "usd": 68000.12
-    }
+
+**GET** `/api/dashboard-widget?city=Ciudad`
+
+**Ejemplo de respuesta:**
+
+```
+Status: 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "city": "Bogotá",
+  "weather": {
+    "city": "Bogotá",
+    "description": "cielo claro",
+    "temperature": 251.15,
+    "icon": "01d"
+  },
+  "bitcoin": {
+    "usd": 119709
   }
-  ```
+}
+```
+
+> ⚠️ **Nota:** Los valores son solo ejemplos. Los datos reales dependen del clima y el precio de Bitcoin al momento de la consulta.
+
+**Campos de la respuesta:**
+- `city`: Nombre de la ciudad consultada.
+- `weather`: Información meteorológica actual de la ciudad.
+  - `city`: Nombre de la ciudad.
+  - `description`: Descripción del clima.
+  - `temperature`: Temperatura actual (en Kelvin).
+  - `icon`: Código de icono de OpenWeatherMap.
+- `bitcoin`: Precio actual de Bitcoin.
+  - `usd`: Precio en dólares estadounidenses (USD).
 
 ---
 
