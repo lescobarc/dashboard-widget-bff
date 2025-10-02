@@ -247,14 +247,14 @@ Content-Type: application/json; charset=utf-8
 ### 1. "Diseña la arquitectura de un BFF en Node.js/Express que combine datos de OpenWeatherMap y CoinGecko en un solo endpoint REST. Incluye manejo de errores, buenas prácticas y estructura de carpetas modular."
 **Ayuda:** Me permitió obtener una estructura de backend robusta, con separación clara de controladores, servicios y rutas, y recomendaciones para manejo de errores y pruebas.
 
-### 2. "Genera un servicio en Angular 20+ que consuma un endpoint `/api/dashboard-widget?city=Ciudad` y devuelva un observable tipado. Usa HttpClient y buenas prácticas de Angular."
+### 2. "Genera un servicio en Angular 20+ que consuma un endpoint `/api/dashboard-widget?city=ciudad` y devuelva un observable tipado. Usa HttpClient y buenas prácticas de Angular."
 **Ayuda:** Obtuve un servicio Angular limpio y reutilizable, con tipado fuerte y manejo de errores, acelerando la integración con el frontend.
 
 ### 3. "Crea un componente Angular standalone, autocontenible y accesible, que muestre el clima y el precio de Bitcoin para una ciudad. Incluye loading, error y fallback si no se puede determinar la ciudad. Usa SCSS y BEM."
 **Ayuda:** Me ayudó a construir un widget visualmente atractivo, accesible y robusto, siguiendo buenas prácticas de UI y UX.
 
-### 4. "Implementa un entorno de pruebas unitarias robusto en Angular moderno, utilizando Jest. Proporciona la configuración necesaria y ejemplos para asegurar cobertura y mantenibilidad."
-**Ayuda:** Obtuve una implementación funcional y profesional de un entorno de testing con Jest, incluyendo archivos de configuración y ejemplos prácticos que garantizan la calidad y mantenibilidad del software.
+### 4. "Implementa un entorno de pruebas unitarias robusto en Angular moderno. Proporciona la configuración necesaria y ejemplos para asegurar cobertura y mantenibilidad."
+**Ayuda:** Obtuve una implementación funcional y profesional de un entorno de testing, incluyendo archivos de configuración y ejemplos prácticos que garantizan la calidad y mantenibilidad del software.
 
 ### 5. "Genera un README profesional y técnico para un proyecto de software, incluyendo secciones de arquitectura, instalación, pruebas, despliegue, manejo de errores. Asegúrate de que sea claro, completo y alineado a buenas prácticas de ingeniería."
 **Ayuda:** Obtuve un README estructurado y profesional, con todas las secciones clave para la documentación de un proyecto de software, facilitando la comprensión, el despliegue y el mantenimiento por parte de cualquier equipo técnico.
