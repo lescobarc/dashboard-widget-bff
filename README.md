@@ -1,5 +1,6 @@
 
-# Dashboard Widget: BFF + Frontend Angular
+
+# Widget: BFF + Frontend Angular
 
 ---
 
@@ -16,16 +17,13 @@ Este proyecto implementa un Backend-for-Frontend (BFF) en Node.js/Express que ex
 
 ---
 
-
-
 ## Tabla de Contenidos
-- [Arquitectura](#arquitectura)
+- [Arquitectura Visual](#arquitectura-visual)
+- [Estructura de Carpetas](#estructura-de-carpetas)
 - [Instalación y Ejecución](#instalación-y-ejecución)
   - [Backend (BFF)](#backend-bff)
   - [Frontend (Angular)](#frontend-angular)
 - [Comandos útiles](#comandos-útiles)
-- [Arquitectura Visual](#arquitectura-visual)
-- [Estructura de Carpetas](#estructura-de-carpetas)
 - [Uso del Endpoint](#uso-del-endpoint)
 - [Pruebas](#pruebas)
 - [Manejo de Errores](#manejo-de-errores)
@@ -37,39 +35,53 @@ Este proyecto implementa un Backend-for-Frontend (BFF) en Node.js/Express que ex
 
 ---
 
-## Arquitectura
+## Arquitectura Visual
+
+```
+Frontend (Angular) <----> BFF (Node/Express) <----> APIs externas (Clima/Bitcoin)
+```
+
+---
+
+## Estructura de Carpetas
 
 ```
 prueba-tecnica/
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── utils/
-│   │   ├── app.js
-│   │   └── server.js
-│   ├── tests/
-│   ├── package.json
-│   └── ...
-├── dashboard-widget/ (Frontend Angular)
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── core/
-│   │   │   ├── features/
-│   │   │   └── ...
-│   │   └── ...
-│   ├── angular.json
-│   ├── package.json
-│   └── ...
-└── README.md
+  backend/
+    src/
+      controllers/
+      routes/
+      services/
+      utils/
+      app.js
+      server.js
+    tests/
+    package.json
+    ...
+  dashboard-widget/
+    src/
+      app/
+        core/
+          models/
+          services/
+        features/
+          dashboard-widget/
+            dashboard-widget.component.html
+            dashboard-widget.component.scss
+            dashboard-widget.component.ts
+            dashboard-widget.component.spec.ts
+        ...
+      ...
+    angular.json
+    package.json
+    ...
+  README.md
 ```
 
 - **backend/**: BFF en Node.js/Express, lógica de negocio, consumo de APIs externas, pruebas unitarias.
 - **dashboard-widget/**: Frontend Angular, widget autocontenible, arquitectura limpia, pruebas unitarias.
 
 ---
-
 
 ## Instalación y Ejecución
 
@@ -83,9 +95,9 @@ prueba-tecnica/
    npm install
    ```
 3. Consigue una API key gratuita de [OpenWeatherMap](https://openweathermap.org/api) y configúrala en el archivo `.env`:
-  ```env
-  OPENWEATHER_API_KEY=tu_api_key_aqui
-
+   ```env
+   OPENWEATHER_API_KEY=tu_api_key_aqui
+   ```
 4. Inicia el servidor:
    ```sh
    npm start # o node src/server.js
@@ -106,7 +118,8 @@ prueba-tecnica/
    ng serve --port 4200
    ```
 4. Accede a `http://localhost:4200` en tu navegador.
-  ```
+
+---
 
 ## Comandos útiles
 
@@ -114,57 +127,7 @@ prueba-tecnica/
 |-----------------------|------------------------|-------------------------|
 | Instalar dependencias | `npm install`          | `npm install`           |
 | Iniciar servidor      | `npm start`            | `ng serve --port 4200`  |
-| Ejecutar pruebas      | `npx jest`             | `ng test`  |
-
----
-## Arquitectura Visual
-
-```
-┌────────────┐      ┌──────────────┐      ┌──────────────┐
-│  Frontend  │<---->│     BFF      │<---->│ APIs externas│
-│  Angular   │      │ Node/Express │      │ Clima/Bitcoin│
-└────────────┘      └──────────────┘      └──────────────┘
-```
-
----
-
-## Estructura de Carpetas
-
-### Backend
-```
-backend/
-├── src/
-│   ├── controllers/
-│   ├── routes/
-│   ├── services/
-│   ├── utils/
-│   ├── app.js
-│   └── server.js
-├── tests/
-├── package.json
-└── ...
-```
-
-### Frontend
-```
-dashboard-widget/
-├── src/
-│   ├── app/
-│   │   ├── core/
-│   │   │   ├── models/
-│   │   │   └── services/
-│   │   ├── features/
-│   │   │   └── dashboard-widget/
-│   │   │       ├── dashboard-widget.component.html
-│   │   │       ├── dashboard-widget.component.scss
-│   │   │       ├── dashboard-widget.component.ts
-│   │   │       └── dashboard-widget.component.spec.ts
-│   │   └── ...
-│   └── ...
-├── angular.json
-├── package.json
-└── ...
-```
+| Ejecutar pruebas      | `npx jest`             | `ng test`               |
 
 ---
 
@@ -189,7 +152,6 @@ dashboard-widget/
 ---
 
 ## Pruebas
-
 
 ### Backend
 - Las pruebas unitarias están en la carpeta `backend/tests`, segregadas en subcarpetas de `controllers` y `services` para facilitar el mantenimiento y la cobertura.
@@ -239,13 +201,14 @@ dashboard-widget/
 
 ---
 
-
 ## Contexto de ejecución para la IA
 
 - Estás colaborando en el desarrollo de un proyecto técnico que implementa un Backend-for-Frontend (BFF) en Node.js/Express y un frontend en Angular 20+.
 - El objetivo es construir un widget que combine información del clima y el precio de Bitcoin para una ciudad, con arquitectura modular, pruebas automatizadas y documentación profesional.
 - Todas las respuestas deben ser aplicables, claras, alineadas a buenas prácticas de ingeniería de software y estándares de calidad para equipos de desarrollo.
 - Prioriza la mantenibilidad, la calidad del código, la cobertura de pruebas y la claridad en la documentación.
+
+---
 
 ## Registro de Prompts de IA
 
@@ -264,13 +227,13 @@ dashboard-widget/
 ### 5. "Genera un README profesional y técnico para un proyecto de software, incluyendo secciones de arquitectura, instalación, pruebas, despliegue, manejo de errores. Asegúrate de que sea claro, completo y alineado a buenas prácticas de ingeniería."
 **Ayuda:** Obtuve un README estructurado y profesional, con todas las secciones clave para la documentación de un proyecto de software, facilitando la comprensión, el despliegue y el mantenimiento por parte de cualquier equipo técnico.
 
-
 ---
 
 ## Justificación de la elección tecnológica para el widget (MFE)
 
 Se eligió Angular 20+ con componentes standalone porque permite crear widgets autocontenidos, reutilizables y fácilmente integrables en cualquier aplicación Angular moderna. La arquitectura standalone elimina dependencias innecesarias de módulos, facilita el testing y el mantenimiento, y es compatible con enfoques de microfrontend. Además, Angular ofrece robustez, tipado fuerte y herramientas avanzadas para desarrollo empresarial, lo que garantiza escalabilidad y calidad en el tiempo.
 
+---
 
 ## ¿Cómo integrar el widget en otros proyectos Angular?
 
@@ -293,13 +256,9 @@ Si necesitas integrarlo en otros frameworks (React, Vue, etc.), puedes migrar el
 - **Arquitectura modular**: separación clara de responsabilidades en controladores, servicios y rutas.
 - **Widget autocontenible**: el componente puede ser reutilizado en otros proyectos o microfrontends.
 
-
 ---
-
 
 ## Autor
 - Desarrollado por [Laura Escobar]
 - Contacto: [lescobarco@hotmail.com]
-
----
 
